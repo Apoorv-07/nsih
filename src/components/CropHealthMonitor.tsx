@@ -25,7 +25,7 @@ const CropHealthMonitor = () => {
     
     // Mock AI analysis - replace with real API when backend is connected
     setTimeout(() => {
-      const diseases = ["Healthy", "Leaf Blight", "Rust", "Powdery Mildew"];
+      const diseases = ["Leaf Blight", "Rust", "Powdery Mildew"];
       const prediction = diseases[Math.floor(Math.random() * diseases.length)];
       const confidence = Math.floor(Math.random() * 30) + 70;
       
@@ -33,8 +33,8 @@ const CropHealthMonitor = () => {
         filename: selectedFile?.name,
         prediction,
         confidence: `${confidence}%`,
-        recommendation: prediction === "Healthy" 
-          ? "Your crop looks healthy! Continue current care practices." 
+        recommendation: prediction === "Leaf Blight" 
+          ? "Your crop has Blight ! Take care of your plant." 
           : `Detected ${prediction}. Apply appropriate fungicide spray and monitor closely.`,
         severity: prediction === "Healthy" ? "low" : Math.random() > 0.5 ? "medium" : "high"
       };
